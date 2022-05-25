@@ -53,7 +53,7 @@ if not selection.empty:
         for key in st.session_state.keys():
             del st.session_state[key]
     elif st.session_state['choice'] == 'default':
-        t.write('You need to select one of the crops.')
+        st.write('You need to select one of the crops.')
     else:
         st.write(f'Congratulations on trying. Unfortunately, {st.session_state.choice} is awfully wrong, really. :see_no_evil:')
 
