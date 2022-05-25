@@ -26,9 +26,9 @@ if not selection.empty:
       max = selection[selection.Value == selection.Value.max()]
       st.session_state['sample'] = selection.sample(n=3)
       shuffler = [0, 1, 2, 3]
-       random.shuffle(shuffler)
-       quiz = st.session_state['sample'].append(max)
-       quiz['order'] = shuffler
+      random.shuffle(shuffler)
+      quiz = st.session_state['sample'].append(max)
+      quiz['order'] = shuffler
       quiz = quiz.reset_index()
       default = [{'Item': 'default' ,'Value': 0, 'order': -1}]
       st.session_state['quiz'] = quiz.append(default).sort_values('order').set_index('Item')
