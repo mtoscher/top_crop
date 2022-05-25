@@ -3,7 +3,7 @@ import pandas as pd
 import random
 import numpy as np
 
-all = pd.read_csv(r'C:\Users\1\Documents\Data_Science\Final_project\Production_Crops_Livestock_E_All_Data_Normalized\all_production_quiz_small.csv')
+all = pd.read_csv('all_production_quiz_small.csv')
 
 st.title("TOP CROPS")
  
