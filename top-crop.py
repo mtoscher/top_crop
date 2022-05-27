@@ -66,7 +66,7 @@ if not selection.empty:
     elif st.session_state['choice'] == 'default':
         st.write('You need to select one of the crops.')
     else:
-        st.write(f'Congratulations on trying. Unfortunately, {st.session_state.choice} is awfully wrong, really. :see_no_evil:')
+        st.error(f'Congratulations on trying. Unfortunately, {st.session_state.choice} is awfully wrong, really. :see_no_evil:')
 
 else:
     st.write("Oh no! It's the dreaded missing data alert! Pick another country-year combination.")
