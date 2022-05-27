@@ -5,7 +5,7 @@ import numpy as np
 
 all = pd.read_csv('all_production_quiz_small.csv')
 
-st.title("TOP CROPS")
+st.title("TOP CROP")
  
 st.write("""Let's play this quiz to see how much you know about where our food grows.""")
 
@@ -24,7 +24,7 @@ if not selection.empty:
 
     if 'quiz' not in st.session_state:
       max = selection[selection.Value == selection.Value.max()]
-      st.session_state['sample'] = selection.sample(n=3)
+      st.session_state['sample'] = selection.sample(n=4-len(max))
       shuffler = [0, 1, 2, 3]
       random.shuffle(shuffler)
       quiz = st.session_state['sample'].append(max)
@@ -48,7 +48,8 @@ if not selection.empty:
 
     #st.session_state
 
-    if st.session_state['choice'] == st.session_state['quiz'].Value.sort_values(ascending=False).head(1).index:
+    #if st.session_state['choice'] == st.session_state['quiz'].Value.sort_values(ascending=False).head(1).index:
+    if st.session_state['quiz'][st.session_state['quiz'].index == st.session_state['choice']]['Value'][0] == st.session_state['quiz'].Value.sort_values(ascending=False)[0]:
         st.title(f'HOORAY! :rocket: {st.session_state.choice} is correct! You nailed it!')
         for key in st.session_state.keys():
             del st.session_state[key]
