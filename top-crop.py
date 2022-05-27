@@ -5,18 +5,9 @@ import numpy as np
 
 all = pd.read_csv('all_production_quiz_small.csv')
 
-page_bg_img = '''
-<style>
-.stApp {
-  background-image: url("https://unsplash.com/photos/YbgPWfWlvkE");
-  background-size: cover;
-}
-</style>
-'''
+#st.markdown(page_bg_img, unsafe_allow_html=True)
 
-st.markdown(page_bg_img, unsafe_allow_html=True)
-
-st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
+#st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
 
 st.title("TOP CROP")
  
@@ -69,6 +60,7 @@ if not selection.empty:
 
     if st.session_state['quiz'][st.session_state['quiz'].index == st.session_state['choice']]['Value'][0] == st.session_state['quiz'].Value.sort_values(ascending=False)[0]:
         st.title(f'HOORAY! :rocket: {st.session_state.choice} is correct! You nailed it!')
+        st.balloons()
         for key in st.session_state.keys():
             del st.session_state[key]
     elif st.session_state['choice'] == 'default':
