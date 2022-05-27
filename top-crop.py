@@ -16,6 +16,8 @@ page_bg_img = '''
 
 st.markdown(page_bg_img, unsafe_allow_html=True)
 
+st.markdown('<style>body{background-color: Blue;}</style>',unsafe_allow_html=True)
+
 st.title("TOP CROP")
  
 st.write("""Let's play this quiz to see how much you know about where our food grows.""")
