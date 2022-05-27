@@ -24,7 +24,8 @@ if not selection.empty:
 
     if 'quiz' not in st.session_state:
       max = selection[selection.Value == selection.Value.max()]
-      st.session_state['sample'] = selection.sample(n=4-len(max))
+      selection_min = selection.drop(index=max.index)
+      st.session_state['sample'] = selection_min.sample(n=4-len(max))
       shuffler = [0, 1, 2, 3]
       random.shuffle(shuffler)
       quiz = st.session_state['sample'].append(max)
