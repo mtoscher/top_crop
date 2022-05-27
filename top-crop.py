@@ -7,9 +7,9 @@ all = pd.read_csv('all_production_quiz_small.csv')
 
 page_bg_img = '''
 <style>
-body {
-background-image: url("https://unsplash.com/photos/YbgPWfWlvkE");
-background-size: cover;
+.stApp {
+  background-image: url("https://unsplash.com/photos/YbgPWfWlvkE");
+  background-size: cover;
 }
 </style>
 '''
