@@ -30,7 +30,7 @@ if not selection.empty:
       else:
           st.session_state['sample'] = selection_min
       shuffler = []
-      for i in range(len(sample)+1):
+      for i in range(len(st.session_state['sample'])+1):
           shuffler.append(i)
       random.shuffle(shuffler)
       quiz = st.session_state['sample'].append(max)
