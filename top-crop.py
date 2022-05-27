@@ -18,7 +18,7 @@ st.session_state['country'] = st.selectbox('Select a country:', countries)
 st.session_state['year'] = st.selectbox('Select a year:', years)
 
 selection = all[all.Area == st.session_state['country']][all.Year == st.session_state['year']]
-selection = selection[['Item', 'Value', 'Unit']][selection.Value > 0.0].sort_values(by='Value').set_index('Item')
+selection = selection[['Item', 'Value']][selection.Value > 0.0].sort_values(by='Value').set_index('Item')
 
 if not selection.empty: 
 
