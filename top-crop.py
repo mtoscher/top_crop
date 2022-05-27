@@ -5,6 +5,17 @@ import numpy as np
 
 all = pd.read_csv('all_production_quiz_small.csv')
 
+page_bg_img = '''
+<style>
+body {
+background-image: url("https://unsplash.com/photos/YbgPWfWlvkE");
+background-size: cover;
+}
+</style>
+'''
+
+st.markdown(page_bg_img, unsafe_allow_html=True)
+
 st.title("TOP CROP")
  
 st.write("""Let's play this quiz to see how much you know about where our food grows.""")
